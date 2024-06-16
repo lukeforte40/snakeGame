@@ -1,7 +1,7 @@
 // Includes
     #include "generateFruitLoc.h"
     #include "globalVariables.h"
-    #include "snakePosition.h"
+    #include "checkPosition.h"
     #include <iostream>
 
 using namespace std;

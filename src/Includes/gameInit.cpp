@@ -5,7 +5,6 @@
     #include "drawScreen.h"
     #include <iostream>
 using namespace std;
-
 // Function
     void gameInit(){
         cout << "Game Initializing..." << endl;
@@ -15,6 +14,5 @@ using namespace std;
         snakeHeadY = gameHeight / 2;
         generateFruitLoc();
         playerScore = 0;
-        snakeTailX[0] = -1;
         drawScreen();
     }

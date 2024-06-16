@@ -1,7 +1,5 @@
-#if !defined(globalVariables_h)
-#define globalVariables_h
 // Includes
-    #include <vector>
+#include <vector>
 
 using namespace std;
 // Global Varaibles
@@ -25,4 +23,5 @@ using namespace std;
     extern snakeDirection snakeDir;
     // Check if the game is over or not
     extern bool isGameOver;
-#endif // globalVariables_h
+// Functions
+    
