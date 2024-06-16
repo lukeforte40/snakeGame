@@ -20,7 +20,7 @@ using namespace std;
     // Snake tail lenght
     extern int tailLenght;
     // For storing snakes direction of travel
-    enum snakeDirection {Stop = 0, Up, Down, Left, Right};
+    enum snakeDirection {Up, Down, Left, Right};
     // Snakes direction variable
     extern snakeDirection snakeDir;
     // Check if the game is over or not

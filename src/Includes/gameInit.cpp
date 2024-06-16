@@ -9,7 +9,7 @@ using namespace std;
     void gameInit(){
         cout << "Game Initializing..." << endl;
         isGameOver = false;
-        snakeDir = Stop;
+        snakeDir = Up;
         snakeHeadX = gameWidth / 2;
         snakeHeadY = gameHeight / 2;
         generateFruitLoc();
