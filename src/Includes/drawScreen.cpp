@@ -39,16 +39,15 @@ using namespace std;
         {
             cout << '#';
         }
-        // Print snake if it has a tail
-        else if (checkSnakePosition(x, y) && snakeTailX[0] != -1)
+        // Print snake tail
+        else if (checkTail(x, y))
         {
-                cout << 'O';
-                // If the snake has a tail
-                // If the snake doesnt have a tail
-                else
-                {
-                    cout << 'O';
-                }
+            cout << "0";
+        }
+        // Print snake head
+        else
+        {
+            cout << 'O';
         }
     }
     void drawScreen(){
