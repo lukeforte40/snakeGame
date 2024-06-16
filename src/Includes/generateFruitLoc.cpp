@@ -11,5 +11,9 @@ using namespace std;
     void generateFruitLoc(){
         fruitX = rand() % gameWidth;
         fruitY = rand() % gameHeight;
-    
+        while (checkSnakePosition(fruitX, fruitY))
+        {
+            fruitX = rand() % gameWidth;
+            fruitY = rand() % gameHeight;
+        }
     }
