@@ -1,7 +1,7 @@
 // Includes
     #include "drawScreen.h"
     #include "globalVariables.h"
-    #include "clearScreen.h"
+    #include "updateGame.h"
     #include "checkPosition.h"
     #include <iostream>
 

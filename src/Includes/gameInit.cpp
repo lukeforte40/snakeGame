@@ -1,7 +1,7 @@
 // Includes
     #include "gameInit.h"
     #include "globalVariables.h"
-    #include "generateFruitLoc.h"
+    #include "updateGame.h"
     #include "drawScreen.h"
     #include <iostream>
 using namespace std;
