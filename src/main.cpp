@@ -2,7 +2,9 @@
     #include "Includes/globalVariables.h"
     #include "Includes/gameInit.h"
     #include "Includes/drawScreen.h"
-    
+    #include <iostream>
+
+using namespace std;
 // Global variables
     // Boundary sizing
     const int gameHeight = 20;
@@ -25,10 +27,5 @@
 // Main function
     int main(){
         gameInit();
-        while (!isGameOver)
-        {
-            drawScreen();
-        }
-        
         return 0;
     }

@@ -2,6 +2,7 @@
     #include "drawScreen.h"
     #include "globalVariables.h"
     #include "clearScreen.h"
+    #include "checkPosition.h"
     #include <iostream>
 
 using namespace std;
@@ -14,38 +15,41 @@ using namespace std;
         cout << endl;
     }
     void drawContent(){
-        for (int i = 0; i < gameHeight; i++){
+        for (int i = 0; i < gameHeight - 2; i++){
             // Drawing left wall
             cout << "|";
             // Drawing the inside of the game
-            for (int i = 0; i < gameHeight - 2; i++){
-                for (int j = 0; j < gameWidth; j++)
+                for (int j = 0; j < gameWidth - 2; j++)
                 {
                     // Check what belongs at x,y on screen
                     checkContent(j, i);
                 }
-            }
             // Drawing the right wall
             cout << "|" << endl;
+            }
         }
-    }
     void checkContent(int x, int y){
         // If empty space
-        if (snakeHeadX != x || snakeHeadY != y && fruitX != x || fruitY != y)
+        if (!(checkFruitPosition(x, y) || checkSnakePosition(x, y)))
         {
             cout << ' ';
         }
-        // Print snake head
-        if (snakeHeadX == x && snakeHeadY == y)
-        {
-            cout << 'O';
-        }
         // Print fruit
-        if (fruitX == x && fruitY == y)
+        else if (checkFruitPosition(x, y))
         {
-            cout << "#";
+            cout << '#';
         }
-        
+        // Print snake if it has a tail
+        else if (checkSnakePosition(x, y) && snakeTailX[0] != -1)
+        {
+                cout << 'O';
+                // If the snake has a tail
+                // If the snake doesnt have a tail
+                else
+                {
+                    cout << 'O';
+                }
+        }
     }
     void drawScreen(){
         clearScreen();
