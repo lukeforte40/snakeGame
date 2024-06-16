@@ -1,5 +1,5 @@
 This project is on development of the game snake. The purpose of this game is to expand my c++ skills and practice.
-Specifically I will practise executing a project structure that is scalable for larger projects as it begins getting more complicated.
+Specifically I will practise executing a project structure that is scalable for larger projects as it begins getting more complicated. Additionally I began to explore the use of custom code snippets in vs code, specifically boilerplate code for c++.
 Project Structure:
 Bin: A folder that contains the compiled .DLL file or (sometimes) a .lib or the executable application or .exe file — the “binary”.
 Include: A folder that contains the publicly distributed .h (header files) for a library to be included in another application, required to use a library or DLL.

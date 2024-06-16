@@ -5,8 +5,8 @@
     
 // Global variables
     // Boundary sizing
-    const int gameHeight = 80;
-    const int gameWidth = 20;
+    const int gameHeight = 20;
+    const int gameWidth = 80;
     // Snakes head coordinates
     int snakeHeadX, snakeHeadY;
     // Fruit coordinates
@@ -25,6 +25,10 @@
 // Main function
     int main(){
         gameInit();
+        while (!isGameOver)
+        {
+            drawScreen();
+        }
         
         return 0;
     }

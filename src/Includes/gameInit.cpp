@@ -1,8 +1,8 @@
 // Includes
     #include "gameInit.h"
     #include "globalVariables.h"
+    #include "generateFruitLoc.h"
     #include <iostream>
-
 using namespace std;
 
 // Function
@@ -11,8 +11,6 @@ using namespace std;
         snakeDir = Stop;
         snakeHeadX = gameWidth / 2;
         snakeHeadY = gameHeight / 2;
-        fruitX = rand() % gameWidth;
-        fruitY = rand() % gameHeight;
+        generateFruitLoc();
         playerScore = 0;
-        cout << "Game Initializing..." << endl;
     }
