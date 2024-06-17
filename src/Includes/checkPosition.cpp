@@ -14,7 +14,9 @@ using namespace std;
         {
             return true;
         }
-        checkTail(x, y);
+        else if(checkTail(x, y)){
+            return true;
+        }
         return false;
     }
     bool checkFruitPosition(int x, int y){
