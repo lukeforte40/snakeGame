@@ -1,6 +1,5 @@
 // Includes
     #include "Includes/globalVariables.h"
-    #include "Includes/drawScreen.h"
     #include "Includes/updateGame.h"
     #include <iostream>
     #include <vector>

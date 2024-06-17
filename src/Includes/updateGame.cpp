@@ -63,8 +63,8 @@ using namespace std;
             // Setting the first array index to the current snake position
             snakeTailX[0] = snakeHeadX;
             snakeTailY[0] = snakeHeadY;
-            // Looping through ever item excpet the first and adding the next x,y value to the current.
-            for (int i = 0; i > snakeTailX.size() ; i++)
+            // Looping through every item excpet the first and adding the next x,y value to the current.
+            for (int i = 1; i > snakeTailX.size() ; i++)
             {
                 snakeTailX[i] = snakeTailX[i+1];
                 snakeTailY[i] = snakeTailY[i+1];
@@ -149,18 +149,22 @@ using namespace std;
         generateFruitLoc();
         playerScore = 0;
         drawScreen();
-        // Capture current terminal state
-            struct termios origTerminal;
-            tcgetattr(STDIN_FILENO, &origTerminal);
-        // Turn off ECHO and enable raw mode
-            struct termios rawTerminal;
-            tcgetattr(STDIN_FILENO, &rawTerminal);
-            rawTerminal.c_lflag &= ~(ECHO | ICANON);
-            tcsetattr(STDIN_FILENO, TCSAFLUSH, &rawTerminal);
+        #ifdef __unix__ // for unix
+            // Capture current terminal state
+                struct termios origTerminal;
+                tcgetattr(STDIN_FILENO, &origTerminal);
+            // Turn off ECHO and enable raw mode
+                struct termios rawTerminal;
+                tcgetattr(STDIN_FILENO, &rawTerminal);
+                rawTerminal.c_lflag &= ~(ECHO | ICANON);
+                tcsetattr(STDIN_FILENO, TCSAFLUSH, &rawTerminal);
+        #endif
         thread thr1(tick);
         thread thr2(getUserInput);
         thr1.join();
         thr2.join();
-        // Reset terminal to original state
-            tcsetattr(STDIN_FILENO, TCSAFLUSH, &origTerminal);
+        #ifdef __unix__ // for unix
+            // Reset terminal to original state
+                tcsetattr(STDIN_FILENO, TCSAFLUSH, &origTerminal);
+        #endif
     }

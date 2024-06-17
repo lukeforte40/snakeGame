@@ -10,7 +10,7 @@ using namespace std;
     
 // Functions
     bool checkSnakePosition(int x, int y){
-        if (snakeHeadX == x && snakeHeadY == y)
+        if ((snakeHeadX == x && snakeHeadY == y))
         {
             return true;
         }
@@ -18,7 +18,7 @@ using namespace std;
         return false;
     }
     bool checkFruitPosition(int x, int y){
-        if (fruitX == x && fruitY == y)
+        if ((fruitX == x && fruitY == y))
         {
             return true;
         }
