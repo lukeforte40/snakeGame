@@ -2,5 +2,7 @@
 #define movement_h
     void clearScreen();
     void generateFruitLoc();
-    void tick(int speed);
+    void tick();
+    void move();
+    void getUserInput();
 #endif // movement_h

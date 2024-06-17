@@ -4,6 +4,7 @@
     #include "updateGame.h"
     #include "drawScreen.h"
     #include <iostream>
+    #include <thread>
 using namespace std;
 // Function
     void gameInit(){
@@ -15,4 +16,6 @@ using namespace std;
         generateFruitLoc();
         playerScore = 0;
         drawScreen();
+        thread thr(tick);
+        thr.join();
     }
