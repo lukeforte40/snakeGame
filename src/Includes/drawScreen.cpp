@@ -58,5 +58,4 @@ using namespace std;
         drawContent();
         // Draw the bottom wall
         drawHorizontal();
-        isGameOver = true;
     }
