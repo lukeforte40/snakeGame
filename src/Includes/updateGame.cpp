@@ -64,7 +64,7 @@ using namespace std;
             snakeTailX[0] = snakeHeadX;
             snakeTailY[0] = snakeHeadY;
             // Looping through every item excpet the first and adding the current x,y value to the next.
-            for (int i = tailLenght; i > 1; i--)
+            for (int i = tailLenght; i > 0; i--)
             {
                 snakeTailX[i] = snakeTailX[i - 1];
                 snakeTailY[i] = snakeTailY[i - 1];
