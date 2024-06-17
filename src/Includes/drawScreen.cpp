@@ -58,4 +58,5 @@ using namespace std;
         drawContent();
         // Draw the bottom wall
         drawHorizontal();
+        cout << "Player Score: " <<playerScore<< "Pts" << endl;
     }
