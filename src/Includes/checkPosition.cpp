@@ -10,7 +10,7 @@ using namespace std;
     
 // Functions
     bool checkSnakePosition(int x, int y){
-        if ((snakeHeadX == x && snakeHeadY == y))
+        if (((snakeHeadX == x) && (snakeHeadY == y)))
         {
             return true;
         }
@@ -33,19 +33,21 @@ using namespace std;
         }
         // find index of first matching value
         auto xIndex = find(snakeTailX.begin(),snakeTailX.end(), x);
-        switch (count(snakeTailX.begin(),snakeTailX.end(), x))
+        if (count(snakeTailX.begin(),snakeTailX.end(), x) == 0)
         {
         case 0:
             return false;
-            break;
-        case 1:
+        }
+        else if (count(snakeTailX.begin(),snakeTailX.end(), x) == 1){
+            int tailY = snakeTailY[xIndex - snakeTailX.begin()];
             // check if current x value has matching y variable
             if (snakeTailY[xIndex - snakeTailX.begin()] == y)
             {
                 return true;
             }
             return false;
-        default:
+        }
+        else{
             while (xIndex != snakeTailX.end())
             {
                 // check if current x value has matching y variable
@@ -62,11 +64,13 @@ using namespace std;
     }
     void checkCollision(){
         // Checks if the snakes head will collide with the wall
+        // Fix Me
         if ((snakeHeadX == 0 || snakeHeadX == gameWidth || snakeHeadY == 0 || snakeHeadY == gameHeight))
         {
             isGameOver = true;
         }
         // Checks if the snakes head will collide with its own tail
+        // Fix Me
         else if (checkTail(snakeHeadX, snakeHeadY))
         {
             isGameOver = true;
