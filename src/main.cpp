@@ -1,7 +1,7 @@
 // Includes
     #include "Includes/globalVariables.h"
-    #include "Includes/gameInit.h"
     #include "Includes/drawScreen.h"
+    #include "Includes/updateGame.h"
     #include <iostream>
     #include <vector>
 
@@ -27,6 +27,6 @@ using namespace std;
 
 // Main function
     int main(){
-        gameInit();
+        play();
         return 0;
     }

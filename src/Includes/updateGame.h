@@ -5,4 +5,5 @@
     void tick();
     void move();
     void getUserInput();
+    void play();
 #endif // movement_h
