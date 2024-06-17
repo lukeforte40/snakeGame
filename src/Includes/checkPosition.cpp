@@ -1,5 +1,6 @@
 // Includes
     #include "checkPosition.h"
+    #include "updateGame.h"
     #include "globalVariables.h"
     #include <algorithm>
     #include <bits/stdc++.h>
@@ -55,5 +56,26 @@ using namespace std;
             }            
             return false;
             break;
+        }
+    }
+    void checkCollision(){
+        // Checks if the snakes head will collide with the wall
+        if ((snakeHeadX == 0 || snakeHeadX == gameWidth || snakeHeadY == 0 || snakeHeadY == gameHeight))
+        {
+            isGameOver = true;
+        }
+        // Checks if the snakes head will collide with its own tail
+        else if (checkTail(snakeHeadX, snakeHeadY))
+        {
+            isGameOver = true;
+        }
+        // Checks if the snakes head lands on a fruit
+        else if (checkFruitPosition(snakeHeadX, snakeHeadY))
+        {
+            tailLenght++;
+            playerScore += 10;
+            snakeTailX.push_back(snakeHeadX);
+            snakeTailY.push_back(snakeHeadY);
+            generateFruitLoc();
         }
     }
