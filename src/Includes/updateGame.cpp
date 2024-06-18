@@ -58,18 +58,15 @@ using namespace std;
         } while (!isGameOver);
     }
     void move(){
-        if (tailLenght != 0)
-        {
-            // Setting the first array index to the current snake position
-            snakeTailX[0] = snakeHeadX;
-            snakeTailY[0] = snakeHeadY;
             // Looping through every item excpet the first and adding the current x,y value to the next.
-            for (int i = tailLenght; i > 0; i--)
-            {
-                snakeTailX[i] = snakeTailX[i - 1];
-                snakeTailY[i] = snakeTailY[i - 1];
-            }
-        }
+                for (int i = tailLenght; i > 0; i--)
+                {
+                    snakeTailX[i] = snakeTailX[i - 1];
+                    snakeTailY[i] = snakeTailY[i - 1];
+                }
+            // setting index 1 to the latest snake head position
+                snakeTailX[0] = snakeHeadX;
+                snakeTailY[0] = snakeHeadY;
         switch (snakeDir)
         {
         case Up:
@@ -148,6 +145,8 @@ using namespace std;
         snakeHeadY = gameHeight / 2;
         generateFruitLoc();
         playerScore = 0;
+        snakeTailX.push_back(1);
+        snakeTailY.push_back(1);
         drawScreen();
         #ifdef __unix__ // for unix
             // Capture current terminal state

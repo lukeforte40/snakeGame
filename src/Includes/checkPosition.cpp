@@ -27,7 +27,7 @@ using namespace std;
         return false;
     }
     bool checkTail(int x, int y){
-        if (snakeTailX.empty())
+        if (tailLenght == 0)
         {
             return false;
         }
@@ -35,23 +35,13 @@ using namespace std;
         auto xIndex = find(snakeTailX.begin(),snakeTailX.end(), x);
         if (count(snakeTailX.begin(),snakeTailX.end(), x) == 0)
         {
-        case 0:
-            return false;
-        }
-        else if (count(snakeTailX.begin(),snakeTailX.end(), x) == 1){
-            int tailY = snakeTailY[xIndex - snakeTailX.begin()];
-            // check if current x value has matching y variable
-            if (snakeTailY[xIndex - snakeTailX.begin()] == y)
-            {
-                return true;
-            }
             return false;
         }
         else{
             while (xIndex != snakeTailX.end())
             {
                 // check if current x value has matching y variable
-                if (snakeTailY[xIndex - snakeTailX.begin()] == y)
+                if ((snakeTailY[xIndex - snakeTailX.begin()] == y) && (tailLenght > (xIndex - snakeTailX.begin())))
                 {
                     return true;
                 }
@@ -59,13 +49,12 @@ using namespace std;
                 xIndex = find(xIndex + 1, snakeTailX.end(), x);
             }            
             return false;
-            break;
         }
     }
     void checkCollision(){
         // Checks if the snakes head will collide with the wall
         // Fix Me
-        if ((snakeHeadX == 0 || snakeHeadX == gameWidth || snakeHeadY == 0 || snakeHeadY == gameHeight))
+        if ((snakeHeadX == 0 || snakeHeadX == gameWidth - 2 || snakeHeadY == 0 || snakeHeadY == gameHeight - 2))
         {
             isGameOver = true;
         }
@@ -80,8 +69,9 @@ using namespace std;
         {
             tailLenght++;
             playerScore += 10;
-            snakeTailX.push_back(snakeHeadX);
-            snakeTailY.push_back(snakeHeadY);
+            // Fix me so that this calculates the end position of the tail and adds one
+            snakeTailX.push_back(1);
+            snakeTailY.push_back(1);
             generateFruitLoc();
         }
     }
