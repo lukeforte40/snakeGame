@@ -29,12 +29,11 @@ using namespace std;
         #endif
     }
     void generateFruitLoc(){
-        fruitX = rand() % gameWidth;
-        fruitY = rand() % gameHeight;
-        while (checkSnakePosition(fruitX, fruitY))
+        fruitX = rand() % (gameWidth - 2);
+        fruitY = rand() % (gameHeight - 2);
+        if (checkSnakePosition(fruitX, fruitY))
         {
-            fruitX = rand() % gameWidth;
-            fruitY = rand() % gameHeight;
+            generateFruitLoc();
         }
     }
     void tick(){
