@@ -53,13 +53,11 @@ using namespace std;
     }
     void checkCollision(){
         // Checks if the snakes head will collide with the wall
-        // Fix Me
         if ((snakeHeadX == 0 || snakeHeadX == gameWidth - 2 || snakeHeadY == 0 || snakeHeadY == gameHeight - 2))
         {
             isGameOver = true;
         }
         // Checks if the snakes head will collide with its own tail
-        // Fix Me
         else if (checkTail(snakeHeadX, snakeHeadY))
         {
             isGameOver = true;
@@ -69,7 +67,6 @@ using namespace std;
         {
             tailLenght++;
             playerScore += 10;
-            // Fix me so that this calculates the end position of the tail and adds one
             snakeTailX.push_back(1);
             snakeTailY.push_back(1);
             generateFruitLoc();
