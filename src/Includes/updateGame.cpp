@@ -6,6 +6,7 @@
     #include <iostream>
     #include <thread>
     #include <chrono>
+    #include <time.h>
     #ifdef __unix__ // for unix
         #include <cstdio>
         #include <unistd.h>
@@ -137,6 +138,7 @@ using namespace std;
         #endif
     }
     void play(){
+        srand(time(NULL));
         cout << "press W, A, S, or D to Start." << endl;
         cin >> c;
         isGameOver = false;
