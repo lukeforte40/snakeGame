@@ -1,2 +1,2 @@
 - The game does not update the game state until a computer input is updated. ie. the game doesnt recognize that a user has hit the wall until the user tries to turn another direction.
-- termios settings no longer working.
+- the fruit generator isnt random and also does not generate more than 6 rounds
