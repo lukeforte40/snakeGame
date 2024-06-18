@@ -46,10 +46,10 @@ using namespace std;
             switch (snakeDir)
             {
             case Up:
-            this_thread::sleep_for(chrono::milliseconds(500));
+            this_thread::sleep_for(chrono::milliseconds(250));
                 break;
             case Down:
-            this_thread::sleep_for(chrono::milliseconds(700));
+            this_thread::sleep_for(chrono::milliseconds(250));
                 break;
             default:
             this_thread::sleep_for(chrono::milliseconds(100));
